@@ -6,7 +6,7 @@ def main():
         page_icon='🕮',
         layout='wide')   
     
-    with open(r'C:\Users\ACER\Documents\css\configApps.css') as f:
+    with open('configApps.css') as f:
         css = f.read()
     st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)   
     
