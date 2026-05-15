@@ -12,7 +12,7 @@ def main():
     
     buttUrls = [['Conversor de imagens', 
                  'https://convertallimagetoimage-pn9uhxmd5nqmwcytmiossr.streamlit.app/', 
-                 ':material/assignment_add:'], 
+                 ':material/reset_image:'], 
                 ['Calculadora de datas', 
                  'https://calculodatas-bbpyhvlpqtc39cwtvznt9r.streamlit.app/', 
                  ':material/calendar_month:'], 
