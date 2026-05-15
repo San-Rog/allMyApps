@@ -18,7 +18,6 @@ div.stLinkButton > a {
     border: 0.5px solid; 
     transition: all 0.3s ease; 
 	color: black;
-	font-size:28px;
 }
 
 div.stLinkButton > a:hover {
@@ -26,6 +25,5 @@ div.stLinkButton > a:hover {
 	color: white;
 	box-shadow: 2px 3px 5px #888;
 	transform: translate(3%, -8%);
-	font-size:28px;
 }
 
