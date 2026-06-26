@@ -6,13 +6,16 @@ def main():
         page_icon='🕮',
         layout='wide')   
     
-    with open('configApps.css') as f:
+    with open(r'C:\Users\ACER\Documents\css\configApps.css') as f:
         css = f.read()
     st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)   
     
     buttUrls = [['Conversor de imagens', 
                  'https://convertallimagetoimage-pn9uhxmd5nqmwcytmiossr.streamlit.app/', 
                  ':material/reset_image:'], 
+                ['Mescla de imagens', 
+                 'https://imagetopdftodocx-ny7max5gwznawux9jcrjr8.streamlit.app/', 
+                 ':material/join_right:'], 
                 ['Calculadora de datas', 
                  'https://calculodatas-bbpyhvlpqtc39cwtvznt9r.streamlit.app/', 
                  ':material/calendar_month:'], 
@@ -27,27 +30,22 @@ def main():
                  ':material/text_snippet:'], 
                 ['Visualizador de imagens', 
                  'https://viewerpdf-o9cboaczuavjfj2ptfn3f3.streamlit.app/', 
-                 ':material/image:']
+                 ':material/image:'], 
+                ['Formulário TJMA', 
+                 'https://formreport-rmtbndsjrmydcvhz5jxpcp.streamlit.app/', 
+                 ':material/contract:']
                 ]
     st.subheader('Galeria de aplicativos')
-
-    col1, col2, col3 = st.columns(spec=3)
-    col1.link_button(label=buttUrls[0][0], url=buttUrls[0][1], 
-                     use_container_width=True, width="stretch", icon=buttUrls[0][2])
-    col2.link_button(label=buttUrls[1][0], url=buttUrls[1][1], 
-                     use_container_width=True, width="stretch", icon=buttUrls[1][2])
-    col3.link_button(label=buttUrls[2][0], url=buttUrls[2][1], 
-                     use_container_width=True, width="stretch", icon=buttUrls[2][2])
-    
-    col4, col5, col6 = st.columns(spec=3)
-    col4.link_button(label=buttUrls[3][0], url=buttUrls[3][1], 
-                     use_container_width=True, width="stretch", icon=buttUrls[3][2])
-    col5.link_button(label=buttUrls[4][0], url=buttUrls[4][1], 
-                     use_container_width=True, width="stretch", icon=buttUrls[4][2])
-    col6.link_button(label=buttUrls[5][0], url=buttUrls[5][1], 
-                     use_container_width=True, width="stretch", icon=buttUrls[5][2])
-    
-    
-
+    nCols = int(len(buttUrls)/2)
+    colsOne = st.columns(spec=nCols)
+    colsTwo = st.columns(spec=nCols)
+    colsAll = [colsOne, colsTwo]
+    for cl, cols in enumerate(colsAll): 
+        plus = 0 if cl == 0 else nCols
+        for c, col in enumerate(cols):
+            c += plus
+            col.link_button(label=buttUrls[c][0], url=buttUrls[c][1], 
+                            use_container_width=True, width="stretch", icon=buttUrls[c][2])
+            
 if __name__ == '__main__':  
     main()
